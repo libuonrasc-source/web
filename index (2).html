@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>青葉市立みらい中学校</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#14365a;--navy2:#1b4670;--green:#1f8a5b;--gold:#f2b824;--ink:#2a3441;--line:#d8dee6;--bg:#fff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-size:14px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.serif{font-family:"Noto Serif JP",serif}
+/* header */
+header{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,14vw,220px);background:#fff;position:relative;z-index:5}
+.logo{display:flex;align-items:center;gap:12px;color:var(--navy);font-size:28px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.logo svg{width:76px;height:50px}
+.sub{display:flex;align-items:center;gap:0;font-size:12px}
+.sub a{padding:0 14px;border-left:1px solid var(--line);position:relative}
+.sub a:last-of-type{margin-right:12px}
+.sub a::after{content:"";position:absolute;left:14px;right:14px;bottom:-4px;height:1px;background:var(--navy);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.sub a:hover::after{transform:scaleX(1)}
+.search{width:32px;height:32px;border-radius:50%;background:var(--navy);display:grid;place-items:center;border:0;cursor:pointer;transition:transform .3s}
+.search:hover{transform:scale(1.12) rotate(-8deg)}
+nav{background:var(--navy);height:40px;display:flex;justify-content:center;position:sticky;top:0;z-index:10}
+nav a{color:#fff;font-size:13.5px;font-weight:500;padding:0 28px;display:flex;align-items:center;position:relative;white-space:nowrap}
+nav a+a::before{content:"";position:absolute;left:0;top:11px;bottom:11px;width:1px;background:rgba(255,255,255,.35)}
+nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+/* hero */
+.hero{position:relative;height:312px;overflow:hidden;background:#3c6e3e}
+.scene{position:absolute;inset:-4% 0;background:
+linear-gradient(180deg,#bcd5e2 0,#d5e4e8 35%,transparent 36%),
+radial-gradient(circle at 8% 25%,#3f7a3a 0 90px,transparent 91px),
+radial-gradient(circle at 95% 30%,#5d9144 0 100px,transparent 101px),
+linear-gradient(90deg,#4f8a47,#8aa889 40%,#c9d3cf 60%,#6f9a60);animation:drift 14s ease-in-out infinite alternate}
+.bld{position:absolute;right:12%;top:0;width:34%;height:70%;background:repeating-linear-gradient(90deg,#e8ecee 0 34px,#9bb3c2 34px 40px),#e8ecee;opacity:.85}
+@keyframes drift{from{transform:scale(1.02) translateX(0)}to{transform:scale(1.09) translateX(-1.5%)}}
+.stu{position:absolute;bottom:0;width:17%;min-width:130px;animation:rise 1s cubic-bezier(.2,.8,.2,1) both}
+.stu i{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%}
+.stu .h{top:0;width:46%;aspect-ratio:1;background:#f2cfb4;box-shadow:inset 0 14px 0 #1b1b26}
+.stu .b{top:44%;width:100%;height:240px;border-radius:40% 40% 0 0;background:linear-gradient(#1b2a52,#142040)}
+.s1{left:35%;height:75%;animation-delay:.5s}.s2{left:50%;height:68%;animation-delay:.65s}.s3{left:65%;height:80%;animation-delay:.8s}.s4{left:80%;height:78%;animation-delay:.95s}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.35),transparent 45%)}
+.copy{position:absolute;left:clamp(16px,8.1vw,128px);top:44px;z-index:3;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.25)}
+.copy h1{margin:0;font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(30px,3.6vw,52px);line-height:1.3;letter-spacing:.06em}
+.copy h1 span{display:block;overflow:hidden}
+.copy h1 span b{display:block;font-weight:500;animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+.copy h1 span:nth-child(2) b{animation-delay:.2s}
+@keyframes up{from{transform:translateY(110%);opacity:0}to{transform:none;opacity:1}}
+.copy p{margin:10px 0 18px;font-family:"Noto Serif JP",serif;font-size:clamp(14px,1.5vw,21px);letter-spacing:.08em;animation:fade 1s .6s both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--gold);color:var(--navy);font-weight:700;border-radius:999px;padding:10px 40px;box-shadow:0 3px 8px rgba(0,0,0,.2);text-shadow:none;transition:transform .25s,box-shadow .25s,gap .25s;animation:fade 1s .9s both}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 16px rgba(0,0,0,.25);gap:20px}
+/* wrap */
+.wrap{width:min(1330px,calc(100% - 32px));margin:0 auto}
+.notice{margin-top:-1px;position:relative;z-index:4;display:flex;align-items:center;background:linear-gradient(90deg,#fdf3cf,#fff8e1);border-radius:0 0 6px 6px;box-shadow:0 3px 8px rgba(0,0,0,.12);height:36px;overflow:hidden}
+.notice .tag{background:var(--gold);color:var(--navy);font-weight:700;height:100%;display:flex;align-items:center;gap:10px;padding:0 50px 0 28px;clip-path:polygon(0 0,100% 0,92% 100%,0 100%)}
+.notice .tag svg{animation:ring 2.4s ease-in-out infinite;transform-origin:30% 70%}
+@keyframes ring{0%,70%,100%{transform:rotate(0)}75%{transform:rotate(-14deg)}85%{transform:rotate(10deg)}92%{transform:rotate(-6deg)}}
+.notice .msg{flex:1;padding-left:14px;font-size:13px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.notice .more{padding-right:24px;font-weight:500;font-size:13px}
+.arrow{display:inline-block;width:7px;height:7px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);margin-left:8px;transition:margin .25s}
+a:hover>.arrow,a:hover .arrow{margin-left:13px}
+/* panels */
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:20px}
+.panel{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#fff}
+.panel header{height:38px;padding:0 20px;background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center}
+.panel.ev header{background:var(--green)}
+.panel h2{margin:0;font-size:15px;font-weight:500;display:flex;align-items:center;gap:12px}
+.panel h2 em{font-family:"Noto Serif JP",serif;font-style:normal;font-size:21px;letter-spacing:.04em}
+.panel header a{font-size:12px;font-weight:500}
+.panel ul{list-style:none;margin:0;padding:0}
+.panel li{display:flex;gap:28px;padding:5px 20px;border-top:1px solid #e7ebf0;font-size:13.5px;transition:background .25s,padding-left .25s}
+.panel li:first-child{border-top:0}
+.panel li:hover{background:#f3f7fb;padding-left:28px}
+.panel li time{width:100px;flex:none}
+.ev li time{width:100px}
+/* sections */
+.sec{display:grid;grid-template-columns:2fr 1.2fr;gap:0;margin-top:28px}
+.sec>div:first-child{padding-right:18px;border-right:1px solid var(--line)}
+.sec>div:last-child{padding-left:18px}
+.ttl{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.ttl h3{margin:0;font-family:"Noto Serif JP",serif;font-weight:600;font-size:22px;color:var(--navy);letter-spacing:.02em}
+.ttl span{font-weight:700;font-size:13px;color:var(--navy)}
+.ttl hr{flex:1;border:0;border-top:1px solid var(--navy2);margin:0;transform-origin:left}
+.ttl a{font-size:11.5px;font-weight:700;color:var(--navy)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+.ttl.reveal hr{transform:scaleX(0);transition:transform 1.1s .2s}.ttl.reveal.in hr{transform:scaleX(1)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{position:relative;height:131px;border-radius:3px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.card .ph{position:absolute;inset:0;transition:transform .7s}
+.card:hover .ph{transform:scale(1.12)}
+.card .cap{position:absolute;left:0;right:0;bottom:0;height:32px;background:rgba(20,54,90,.78);color:#fff;font-weight:700;display:flex;justify-content:space-between;align-items:center;padding:0 12px;font-size:13.5px}
+.p1{background:linear-gradient(180deg,#dfe8ee 0 30%,transparent 30%),repeating-linear-gradient(90deg,#f2f2f0 0 30px,#cdd5da 30px 34px),#e5e5e0}
+.p1::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60%;background:repeating-linear-gradient(90deg,#26335b 0 14px,transparent 14px 38px),linear-gradient(#b0814f,#8c6035);opacity:.8}
+.p2{background:radial-gradient(circle at 30% 60%,#243a72 0 22px,transparent 23px),radial-gradient(circle at 62% 50%,#fff 0 16px,transparent 17px),linear-gradient(180deg,#c98f4f,#8f5a2a)}
+.p3{background:radial-gradient(circle at 25% 70%,#fff 0 18px,transparent 19px),radial-gradient(circle at 55% 65%,#fff 0 18px,transparent 19px),radial-gradient(circle at 82% 70%,#fff 0 18px,transparent 19px),linear-gradient(180deg,#9fc8e6 0 50%,#6e9e5a 50%)}
+.about{display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+.about .ph{height:131px;border-radius:3px;background:linear-gradient(180deg,#a9d0ee 0 45%,transparent 45%),repeating-linear-gradient(90deg,#f1f3f2 0 22px,#8eaabd 22px 26px);box-shadow:0 2px 6px rgba(0,0,0,.2);position:relative;overflow:hidden;transition:transform .5s}
+.about .ph::after{content:"";position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(#4d8a3d,#3c7330)}
+.about .ph:hover{transform:scale(1.03)}
+.about p{margin:0 0 12px;font-size:12.5px;line-height:1.9}
+.pill{display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:#fff;border-radius:999px;padding:5px 40px;font-weight:700;font-size:12.5px;transition:background .3s,transform .3s}
+.pill:hover{background:var(--navy2);transform:translateX(5px)}
+/* quick links */
+.quick{display:grid;grid-template-columns:1.2fr 1.4fr 1.3fr 1.3fr;gap:14px;margin:26px auto 22px}
+.quick a{height:46px;border:1px solid var(--line);border-radius:3px;background:linear-gradient(#fff,#eef2f5);box-shadow:0 2px 4px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;gap:16px;font-weight:700;color:var(--navy);position:relative;transition:transform .25s,box-shadow .25s}
+.quick a:hover{transform:translateY(-3px);box-shadow:0 8px 14px rgba(0,0,0,.15)}
+.quick a .arrow{position:absolute;right:30px}
+.quick svg{width:26px;height:26px}
+/* footer */
+footer{background:var(--navy);color:#fff;height:76px;display:flex;align-items:center;padding:0 clamp(16px,5vw,80px);gap:24px}
+footer .fl{display:flex;align-items:center;gap:12px;font-family:"Noto Serif JP",serif;font-size:21px;font-weight:600;padding-right:24px;border-right:1px solid rgba(255,255,255,.4);height:36px;white-space:nowrap}
+footer .fl svg{width:48px;height:34px}
+footer address{font-style:normal;font-size:12px;line-height:1.8;flex:1}
+footer .links{font-size:11.5px;display:flex}
+footer .links a{padding:0 14px;border-left:1px solid rgba(255,255,255,.4)}
+footer .links a:first-child{border:0}
+.top{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;margin-left:16px;border:0;cursor:pointer;transition:transform .3s}
+.top:hover{transform:translateY(-5px)}
+.top .arrow{transform:rotate(-45deg);margin:4px 0 0}
+@media(max-width:1000px){.sub{display:none}nav{overflow-x:auto;justify-content:flex-start}.panels,.sec{grid-template-columns:1fr}.sec>div:first-child{padding:0 0 24px;border:0}.sec>div:last-child{padding:0}.quick{grid-template-columns:1fr 1fr}.stu{display:none}footer{height:auto;flex-wrap:wrap;padding:16px}footer .fl{border:0}.logo{font-size:20px}.logo svg{width:52px}.cards{gap:8px}.card{height:100px}.notice .more{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+#page{padding:22px 0 40px;min-height:60vh;animation:fade .5s both}
+.crumb{font-size:12px;color:#667;margin-bottom:6px}.crumb a{color:var(--navy);text-decoration:underline}
+/* ページタイトルのデザイン */
+#page .pt {
+  color: #173b63 !important;
+  border-bottom: 3px solid #173b63 !important;
+  padding-bottom: 10px !important;
+  position: relative;
+}
+
+#page .pt::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -3px !important;
+  width: 7% !important;
+  height: 3px !important;
+  background: #eeb52e !important;
+}#page h2{color:var(--navy);font-size:18px;border-left:5px solid var(--green);padding-left:10px;margin:28px 0 10px}
+#page p{line-height:1.95;max-width:78ch}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.g3>div,.box{border:1px solid var(--line);border-radius:6px;padding:16px 18px;background:#fff}
+.g3 b{display:block;font-size:22px;font-family:"Noto Serif JP",serif;color:var(--navy)}
+table.t{border-collapse:collapse;width:100%;max-width:760px}.t th,.t td{border:1px solid var(--line);padding:8px 12px;text-align:left}.t th{background:#eef3f8;width:28%;color:var(--navy)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.tabs button{border:1px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:6px 20px;font:inherit;font-weight:700;cursor:pointer;transition:background .25s,color .25s}.tabs button.on,.tabs button:hover{background:var(--navy);color:#fff}
+.list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}.list li{border-bottom:1px solid var(--line);padding:12px 8px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}.list li:hover{background:#f3f7fb}.list time{width:96px;color:#556}.list .c{background:var(--navy);color:#fff;font-size:11px;padding:1px 10px;border-radius:999px;white-space:nowrap}.list a{color:var(--navy);text-decoration:underline}
+.acc{border:1px solid var(--line);border-radius:6px;margin-bottom:10px;overflow:hidden}.acc>button{width:100%;text-align:left;border:0;background:#f5f8fb;padding:12px 16px;font:inherit;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between}.acc>div{display:none;padding:12px 16px}.acc.open>div{display:block;animation:fade .4s both}
+form.f{display:grid;gap:14px;max-width:640px}form.f label{font-weight:700;display:grid;gap:4px}form.f input,form.f select,form.f textarea{font:inherit;border:1px solid #b9c4d0;border-radius:4px;padding:9px 10px}form.f input:focus,form.f select:focus,form.f textarea:focus,.sbox input:focus{outline:2px solid var(--gold)}form.f .err{color:#b3261e;font-size:12px;font-weight:400}.ok{background:#e8f5ee;border:1px solid var(--green);padding:18px;border-radius:6px;max-width:640px}
+.fbtn{border:0;cursor:pointer;font:inherit;background:var(--navy);color:#fff;font-weight:700;border-radius:999px;padding:10px 44px}.fbtn:hover{background:var(--navy2)}
+.sm{columns:2;max-width:640px;line-height:2.1}.sm a{color:var(--navy);text-decoration:underline}
+.mapb{height:200px;max-width:760px;border-radius:6px;border:1px solid var(--line);background:repeating-linear-gradient(0deg,transparent 0 38px,#dfe6ec 38px 40px),repeating-linear-gradient(90deg,transparent 0 58px,#dfe6ec 58px 60px),#f1f5f0;position:relative;overflow:hidden}.mapb i{position:absolute;left:50%;top:48%;width:22px;height:22px;border-radius:50% 50% 50% 0;background:#d33;transform:rotate(-45deg);animation:pin 1.6s ease-in-out infinite}@keyframes pin{50%{top:44%}}
+.ov{position:fixed;inset:0;background:rgba(10,25,45,.6);z-index:50;display:none;padding:12vh 16px 0}.ov.show{display:block;animation:fade .25s both}.sbox{background:#fff;max-width:640px;margin:0 auto;border-radius:8px;padding:18px;max-height:70vh;overflow:auto}.sbox input{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid #b9c4d0;border-radius:4px}.sbox li{margin:10px 0}.sbox a{color:var(--navy);font-weight:700;text-decoration:underline}.sbox small{display:block;color:#667}
+@media(max-width:1000px){.g3{grid-template-columns:1fr}.sm{columns:1}}
+/* ページタイトル「学校案内」 */
+#page .pt {
+  position: relative !important;
+  border-bottom: 3px solid #173b63 !important;
+  padding-bottom: 10px !important;
+  border-left: none !important;
+}
+
+/* 左端の金色の線 */
+#page .pt::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  bottom: -3px !important;
+  width: 7% !important;
+  height: 3px !important;
+  background: #eeb52e !important;
+}
+/* ABOUTなどの見出しの下線 */
+.ttl {
+  position: relative;
+}
+
+.ttl hr {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border: none;
+  background: #173b63;
+  margin: 15px 0;
+  position: relative;
+}
+
+.ttl hr::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 7%;
+  height: 3px;
+  background: #eeb52e;
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="lg" viewBox="0 0 76 50"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 30c12-2 24 0 34 8 10-8 22-10 34-8v14c-12-2-24 0-34 6-10-6-22-8-34-6z"/><path d="M38 38V20"/></g><path d="M38 20c-2-9-9-12-16-11 1 8 7 12 16 11zM38 20c2-9 9-14 17-12-1 9-8 13-17 12z" fill="#2e9b62"/></symbol>
+</defs></svg>
+
+<header>
+  <a class="logo" href="#"><svg style="color:var(--navy)"><use href="#lg"/></svg>青葉市立みらい中学校</a>
+  <div class="sub"><a href="#">保護者の方へ</a><a href="#">アクセス</a><a href="#">お問い合わせ</a>
+  <button class="search" aria-label="検索"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2"><circle cx="7" cy="7" r="5"/><path d="M11 11l4 4"/></svg></button></div>
+</header>
+<nav><a class="on" href="#">トップページ</a><a href="#">学校案内</a><a href="#">教育目標</a><a href="#">行事予定</a><a href="#">お便り</a><a href="#">学校生活</a><a href="#">いじめ防止基本方針</a><a href="#">おしらせ</a></nav>
+
+<div id="home"><section class="hero">
+  <div class="scene"><div class="bld"></div></div>
+  <div class="stu s1"><i class="b"></i><i class="h"></i></div><div class="stu s2"><i class="b"></i><i class="h"></i></div><div class="stu s3"><i class="b"></i><i class="h"></i></div><div class="stu s4"><i class="b"></i><i class="h"></i></div>
+  <div class="copy">
+    <h1></h1>
+    <p></p>
+    <a class="btn" href="#">学校を知る<i class="arrow"></i></a>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="notice">
+    <div class="tag"><svg width="26" height="22" viewBox="0 0 26 22" fill="var(--navy)"><path d="M2 8h6l10-6v18L8 14H2zM20 6c3 2 3 8 0 10z"/></svg>重要なお知らせ</div>
+    <div class="msg"></div>
+    <a class="more" href="#">詳しく見る<i class="arrow"></i></a>
+  </div>
+
+  <div class="panels">
+    <div class="panel reveal"><header><h2><em>NEWS</em>おしらせ</h2><a href="#">一覧を見る<i class="arrow"></i></a></header>
+      <ul><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li></ul></div>
+    <div class="panel ev reveal"><header><h2><svg width="24" height="22" viewBox="0 0 24 22" fill="none" stroke="#fff" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M7 1v5M17 1v5M7 13h2M11 13h2M15 13h2M7 16h2M11 16h2"/></svg>今月の行事予定</h2><a href="#">一覧を見る<i class="arrow"></i></a></header>
+      <ul><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li></ul></div>
+  </div>
+
+  <div class="sec">
+    <div>
+      <div class="ttl reveal"><h3>OUR SCHOOL</h3><span>学校生活</span><hr><a href="#">学校生活をもっと見る<i class="arrow"></i></a></div>
+      <div class="cards reveal">
+        <a class="card" href="#"><div class="ph p1"></div><div class="cap">授業・学び<i class="arrow"></i></div></a>
+        <a class="card" href="#"><div class="ph p2"></div><div class="cap">部活動<i class="arrow"></i></div></a>
+        <a class="card" href="#"><div class="ph p3"></div><div class="cap">学校行事<i class="arrow"></i></div></a>
+      </div>
+    </div>
+    <div>
+      <div class="ttl reveal"><h3>ABOUT</h3><span>学校案内</span><hr><a href="#">学校案内を見る<i class="arrow"></i></a></div>
+      <div class="about reveal"><div class="ph"></div>
+        <div><a class="pill" href="#">学校案内を見る<i class="arrow"></i></a></div></div>
+    </div>
+  </div>
+
+  <div class="quick reveal">
+    <a href="#"><svg viewBox="0 0 26 26" fill="none" stroke="#1f5d8c" stroke-width="1.6"><rect x="3" y="5" width="20" height="18" rx="2"/><path d="M3 10h20M8 2v5M18 2v5M8 14h2M12 14h2M16 14h2M8 18h2M12 18h2"/></svg>年間行事予定<i class="arrow"></i></a>
+    <a href="#"><svg viewBox="0 0 26 26" fill="none" stroke="#1f5d8c" stroke-width="1.6"><path d="M5 2h12l5 5v17H5z"/><path d="M9 11h9M9 15h9M9 19h9"/></svg>学校だより・お便り<i class="arrow"></i></a>
+    <a href="#"><svg viewBox="0 0 26 26"><path d="M13 24V11" stroke="#1f5d8c" stroke-width="2" fill="none"/><path d="M13 12C13 6 8 3 2 4c0 6 4 9 11 8zM13 12c0-6 5-9 11-8 0 6-4 9-11 8z" fill="#2e9b62"/></svg>教育目標<i class="arrow"></i></a>
+    <a href="#"><svg viewBox="0 0 26 26" fill="none" stroke="#1f5d8c" stroke-width="1.6"><path d="M13 2l9 3v8c0 5-4 9-9 11-5-2-9-6-9-11V5z"/><path d="M9 13l3 3 5-6"/></svg>いじめ防止基本方針<i class="arrow"></i></a>
+  </div>
+</div>
+
+</div><main id="page" class="wrap" hidden></main>
+<div class="ov" id="ov"><div class="sbox"><input id="q" type="search" placeholder="キーワードを入力（例：遠足、部活動、いじめ）" aria-label="サイト内検索"><ul id="res" class="list" style="border:0"></ul></div></div>
+<footer>
+  <div class="fl"><svg style="color:#fff"><use href="#lg"/></svg>青葉市立みらい中学校</div>
+  <address></address>
+  <div class="links"><a href="#">アクセス</a><a href="#">サイトマップ</a><a href="#">プライバシーポリシー</a></div>
+  <button class="top" aria-label="ページ上部へ" onclick="scrollTo({top:0})"><i class="arrow"></i></button>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+  els.forEach(function(e,i){e.style.transitionDelay=(i%3)*0.08+'s';io.observe(e)});
+})();
+</script>
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+var N=[
+{d:'2025.04.18',c:'学校だより',t:'学校だより4月号を掲載しました。',b:'学校だより4月号を「お便り」ページに掲載しました。新年度の学年目標、年間行事の概要、保健室からのお知らせなどを載せています。'},
+{d:'2025.04.15',c:'行事',t:'授業参観・学級懇談会のお知らせ',b:'授業参観・学級懇談会を5月に実施します。詳しい日時は学年ごとの案内をご確認ください。上履きをご持参ください。'},
+{d:'2025.04.10',c:'行事',t:'令和７年度 入学式を行いました。',b:'4月7日、令和７年度の入学式を行いました。新入生の皆さん、入学おめでとうございます。'},
+{d:'2025.04.03',c:'その他',t:'令和７年度 年間行事予定を掲載しました。',b:'令和７年度の年間行事予定を「行事予定」ページに掲載しました。'},
+{d:'2025.03.21',c:'学校だより',t:'学校だより3月号を掲載しました。',b:'3月号では卒業式と1年間の振り返りを特集しています。'}];
+var E={4:[['23日（水）','生徒総会'],['25日（金）','遠足（1年生）'],['30日（水）','中間テスト（〜5月1日）']],5:[['7日（水）','授業参観・学級懇談会'],['16日（金）','生徒会選挙'],['24日（土）','体育祭']],6:[['5日（木）','全校朝会'],['13日（金）','避難訓練'],['27日（金）','期末テスト']]};
+var L=[['学校だより4月号','新年度の目標と行事の概要、保健室からのお知らせを掲載しています。'],['学校だより3月号','卒業式、1年間の振り返り、春休みの過ごし方についてのお知らせです。'],['保健だより4月号','春の健康診断の日程と、感染症予防のポイントをまとめています。'],['給食だより4月号','今月の献立表とアレルギー対応についてのご案内です。']];
+var LF={'授業・学び':'少人数での学び合いや、タブレットを使った調べ学習を取り入れています。生徒が自分の考えを伝え合う授業づくりを大切にしています。','部活動':'運動部：バスケットボール・バレーボール・陸上・卓球・サッカー／文化部：吹奏楽・美術・科学・パソコン。活動は平日の放課後と土曜日に行います。','学校行事':'体育祭、文化祭、合唱コンクール、遠足、修学旅行など。生徒が主体となって企画・運営します。'};
+var sec=function(h){return '<h2>'+h+'</h2>'};
+var P={
+about:['学校案内',function(){return '<p>青葉市立みらい中学校は、豊かな心とたくましい力を育み、未来を切り拓く生徒の育成を目指しています。</p>'+sec('校長あいさつ')+'<p>本校は、一人ひとりの違いを認め合い、学び合う学校です。生徒が安心して挑戦できる環境をつくり、保護者・地域の皆さまとともに歩んでまいります。</p>'+sec('学校概要')+'<table class="t"><tr><th>所在地</th><td>〒123-4567 京都府青葉市みらい町1-2-3</td></tr><tr><th>電話</th><td>0123-45-6789</td></tr><tr><th>生徒数</th><td>全校 540名（各学年6学級）</td></tr><tr><th>創立</th><td>昭和50年4月</td></tr></table>'}],
+goals:['教育目標',function(){return '<p>めざす生徒像を3つの柱で示しています。</p><div class="g3"><div><b>知</b>自ら学び、考えを深める生徒</div><div><b>徳</b>思いやりを持ち、互いを尊重する生徒</div><div><b>体</b>心身を鍛え、粘り強く挑戦する生徒</div></div>'+sec('今年度の重点')+'<p>「学び合い、挑戦し、未来をつくる。」を合言葉に、対話的な学びと主体的な活動を進めます。</p>'}],
+life:['学校生活',function(){return '<div class="tabs">'+Object.keys(LF).map(function(k,i){return '<button data-k="'+k+'" class="'+(i?'':'on')+'">'+k+'</button>'}).join('')+'</div><div class="box" id="lf"></div>'},function(){var f=function(k){$('#lf').innerHTML='<h2 style="margin-top:0">'+k+'</h2><p>'+LF[k]+'</p>'};f('授業・学び');$$('.tabs button').forEach(function(b){b.onclick=function(){$$('.tabs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');f(b.dataset.k)}})}],
+events:['行事予定',function(){return '<div class="tabs">'+[4,5,6].map(function(m,i){return '<button data-m="'+m+'" class="'+(i?'':'on')+'">'+m+'月</button>'}).join('')+'</div><ul class="list" id="el"></ul>'},function(){var f=function(m){$('#el').innerHTML=E[m].map(function(e){return '<li><time>'+m+'月'+e[0]+'</time>'+e[1]+'</li>'}).join('')};f(4);$$('.tabs button').forEach(function(b){b.onclick=function(){$$('.tabs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');f(b.dataset.m)}})}],
+letters:['学校だより・お便り',function(){return '<p>各号の概要を開閉して確認できます。</p>'+L.map(function(l){return '<div class="acc"><button>'+l[0]+'<span>＋</span></button><div>'+l[1]+'</div></div>'}).join('')},function(){$$('.acc>button').forEach(function(b){b.onclick=function(){var a=b.parentNode;a.classList.toggle('open');$('span',b).textContent=a.classList.contains('open')?'－':'＋'}})}],
+bullying:['いじめ防止基本方針',function(){return '<p>いじめは、どの生徒にも、どの学校でも起こり得るものとの認識に立ち、次の方針で取り組みます。</p><div class="g3"><div><b>予防</b>互いを尊重する学級づくりと道徳教育</div><div><b>早期発見</b>定期的なアンケートと教育相談</div><div><b>対応</b>学校全体で組織的に対応し、保護者と連携</div></div>'+sec('相談窓口')+'<table class="t"><tr><th>学校</th><td>0123-45-6789（教頭・生徒指導主事）</td></tr><tr><th>24時間子供SOSダイヤル</th><td>0120-0-78310</td></tr></table>'}],
+news:['おしらせ',function(){return '<div class="tabs">'+['すべて','学校だより','行事','その他'].map(function(k,i){return '<button data-c="'+k+'" class="'+(i?'':'on')+'">'+k+'</button>'}).join('')+'</div><ul class="list" id="nl"></ul>'},function(){var f=function(c){$('#nl').innerHTML=N.map(function(n,i){return (c=='すべて'||n.c==c)?'<li><time>'+n.d+'</time><span class="c">'+n.c+'</span><a href="#news-'+(i+1)+'">'+n.t+'</a></li>':''}).join('')};f('すべて');$$('.tabs button').forEach(function(b){b.onclick=function(){$$('.tabs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');f(b.dataset.c)}})}],
+notice:['新型コロナウイルス感染症に関する対応について',function(){return '<p>感染症対策について、本校の対応をお知らせします。</p><ul style="line-height:2"><li>発熱・かぜ症状がある場合は登校を控え、学校へ連絡してください。</li><li>登校を控えた日は出席停止として扱います。</li><li>手洗い・咳エチケットの指導を継続します。</li></ul>'}],
+parents:['保護者の方へ',function(){return '<p>保護者の皆さまへのご案内です。</p><div class="g3"><div><b>お便り</b><a href="#letters" style="color:var(--navy)">学校だより・保健だよりを見る</a></div><div><b>連絡・欠席</b>朝8時15分までに学校へお電話ください。</div><div><b>相談</b><a href="#contact" style="color:var(--navy)">お問い合わせフォームへ</a></div></div>'}],
+access:['アクセス',function(){return '<div class="mapb"><i></i></div><table class="t" style="margin-top:16px"><tr><th>住所</th><td>〒123-4567 京都府青葉市みらい町1-2-3</td></tr><tr><th>電話</th><td>0123-45-6789</td></tr><tr><th>交通</th><td>みらい駅から徒歩10分／バス「みらい中学校前」下車すぐ</td></tr></table>'}],
+contact:['お問い合わせ',function(){return '<p>必要事項をご入力ください。</p><form class="f" id="cf" novalidate><label>お名前<input name="n"><span class="err"></span></label><label>メールアドレス<input name="e" type="email"><span class="err"></span></label><label>種別<select><option>学校について</option><option>入学について</option><option>その他</option></select></label><label>お問い合わせ内容<textarea name="m" rows="5"></textarea><span class="err"></span></label><button class="fbtn" type="submit">送信する</button></form>'},function(){$('#cf').onsubmit=function(ev){ev.preventDefault();var f=ev.target,ok=true,c=function(el,t){var s=el.parentNode.querySelector('.err');s.textContent=t?'':'入力してください。';if(!t)ok=false};c(f.n,f.n.value.trim());c(f.e,/^\S+@\S+\.\S+$/.test(f.e.value));c(f.m,f.m.value.trim());if(ok)f.outerHTML='<div class="ok"><b>送信しました。</b><br>内容を確認のうえ、担当よりご連絡します。（デモのため実際には送信されません）</div>'}}],
+sitemap:['サイトマップ',function(){return '<div class="sm">'+['about','goals','events','letters','life','bullying','news','parents','access','contact','privacy'].map(function(k){return '<a href="#'+k+'">'+P[k][0]+'</a><br>'}).join('')+'</div>'}],
+privacy:['プライバシーポリシー',function(){return '<p>本校は、個人情報を適切に取り扱い、保護者・生徒の皆さまの情報を教育活動の目的以外には使用しません。お問い合わせフォームで入力された情報は、回答のためにのみ利用します。</p>'}]};
+N.length=0;L.length=0;E[4]=[];E[5]=[];E[6]=[];Object.keys(LF).forEach(function(k){LF[k]=''});['about','goals','bullying','parents','access','notice','privacy'].forEach(function(k){P[k][1]=function(){return ''}});
+var R={'トップページ':'home','学校案内':'about','教育目標':'goals','行事予定':'events','お便り':'letters','学校生活':'life','いじめ防止基本方針':'bullying','おしらせ':'news','保護者の方へ':'parents','アクセス':'access','お問い合わせ':'contact','サイトマップ':'sitemap','プライバシーポリシー':'privacy','詳しく見る':'notice','学校を知る':'about','年間行事予定':'events','学校だより・お便り':'letters','授業・学び':'life','部活動':'life','学校行事':'life','学校生活をもっと見る':'life','学校案内を見る':'about','青葉市立みらい中学校':'home'};
+$$('a[href="#"]').forEach(function(a){var t=a.textContent.trim(),r=R[t];if(t=='一覧を見る')r=a.closest('.ev')?'events':'news';if(r)a.setAttribute('href','#'+r)});
+$$('.panel:not(.ev) li').forEach(function(li,i){li.style.cursor='pointer';li.onclick=function(){location.hash='news-'+(i+1)}});
+$$('.panel.ev li').forEach(function(li){li.style.cursor='pointer';li.onclick=function(){location.hash='events'}});
+$('.notice .msg').style.cursor='pointer';$('.notice .msg').onclick=function(){location.hash='notice'};
+$('.fl').style.cursor='pointer';$('.fl').onclick=function(){location.hash='home'};
+function go(){
+var h=location.hash.slice(1)||'home',pg=$('#page'),m=/^news-(\d+)$/.exec(h),t,body,after;
+close();
+if(h=='home'||!(P[h]||(m&&N[m[1]-1]))){$('#home').hidden=false;pg.hidden=true;
+if(h!='home'&&h)history.replaceState(null,'','#home');mark('home');return}
+if(m){var n=N[m[1]-1];t='おしらせ';body='<h2 style="margin-top:0">'+n.t+'</h2><p><time>'+n.d+'</time>　'+n.c+'</p><p>'+n.b+'</p><p><a href="#news" style="color:var(--navy);text-decoration:underline">一覧へ戻る</a></p>'}
+else{t=P[h][0];body=P[h][1]();after=P[h][2]}
+$('#home').hidden=true;pg.hidden=false;
+pg.innerHTML='<div class="crumb"><a href="#home">トップページ</a> ＞ '+t+'</div><h1 class="pt">'+t+'</h1>'+body;
+if(after)after();scrollTo(0,0);document.title=t+' | 青葉市立みらい中学校';mark(m?'news':h)}
+function mark(h){$$('nav a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')=='#'+h)})}
+var ov=$('#ov'),q=$('#q'),res=$('#res');
+function close(){ov.classList.remove('show')}
+function idx(){var o=[];Object.keys(P).forEach(function(k){var d=document.createElement('div');d.innerHTML=P[k][1]();o.push([k,P[k][0],d.textContent])});N.forEach(function(n,i){o.push(['news-'+(i+1),n.t,n.b])});Object.keys(E).forEach(function(m){E[m].forEach(function(e){o.push(['events',m+'月 '+e[1],e[0]])})});return o}
+var I=null;
+q.oninput=function(){I=I||idx();var v=q.value.trim();if(!v){res.innerHTML='';return}var r=I.filter(function(x){return (x[1]+x[2]).indexOf(v)>-1});res.innerHTML=r.length?r.slice(0,8).map(function(x){var p=x[2].indexOf(v);return '<li><a href="#'+x[0]+'">'+x[1]+'</a><small>'+x[2].slice(Math.max(0,p-12),p+40)+'</small></li>'}).join(''):'<li>該当するページがありません。</li>'};
+$('.search').onclick=function(){ov.classList.add('show');q.value='';res.innerHTML='';q.focus()};
+ov.onclick=function(e){if(e.target==ov||e.target.tagName=='A')close()};
+addEventListener('keydown',function(e){if(e.key=='Escape')close()});
+addEventListener('hashchange',go);go();
+})();
+</script>
+</body>
+</html>

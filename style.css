@@ -1,0 +1,13 @@
+.pdf-link {
+  display: inline-block;
+  padding: 10px 18px;
+  margin: 10px 0;
+  background: #174566;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.pdf-link:hover {
+  background: #18865f;
+}
