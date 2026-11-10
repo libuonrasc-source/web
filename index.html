@@ -559,7 +559,191 @@ footer .fl img {
   vertical-align: middle;
   margin-right: 12px;
 }
+/* ===== 緑基調カラーに統一（上書き） ===== */
+:root{--navy:#1e6b47;--navy2:#2a8057;--green:#2e8b57;--gold:#a5d36a;--ink:#24352b;--line:#d3e3d8}
 
+/* ロゴ・見出し・タイトル */
+.logo{color:#14432c}
+.pt{color:#14432c}
+.pt::after{background:#a5d36a}
+#page h2:before{border-bottom-color:#cfe8d5}
+.crumb{color:#5a6b60}
+
+/* お知らせバー・カード・リスト */
+.notice{background:linear-gradient(90deg,#e8f5d3,#f4faea)}
+.card .cap{background:rgba(30,107,71,.78)}
+.panel li{border-top-color:#e1ece5}
+.panel li:hover,.list li:hover{background:#f1f8f3}
+.quick a{background:linear-gradient(#fff,#edf6f0)}
+.quick svg[stroke],.quick svg [stroke]{stroke:#2e8b57}
+
+/* 表・アコーディオン・ボタン */
+.t th{background:#eaf4ee}
+.acc>button{background:#f1f8f3}
+.pdf-link{background:#2e7d4f}
+#page .pdf-table th{background:#e6f2ea;border-color:#8fb39d}
+#page .pdf-table td{border-color:#8fb39d}
+#page .pdf-table a{color:#1e6b47}
+#page .pdf-icon{color:#2e8b57}
+.category-btn.active{background:#e6f4ea;border-color:#7fbf98;color:#1e6b47}
+
+/* フォーム */
+form.f input,form.f select,form.f textarea,.sbox input{border-color:#b5cfbd}
+
+/* ヒーロー（背景イラスト） */
+.scene{background:
+linear-gradient(180deg,#cfe6d6 0,#e1efe4 35%,transparent 36%),
+radial-gradient(circle at 8% 25%,#3f7a3a 0 90px,transparent 91px),
+radial-gradient(circle at 95% 30%,#5d9144 0 100px,transparent 101px),
+linear-gradient(90deg,#4f8a47,#8aa889 40%,#c9d3cf 60%,#6f9a60)}
+.bld{background:repeating-linear-gradient(90deg,#e9f1ec 0 34px,#9fc0ab 34px 40px),#e9f1ec}
+.stu .b{background:linear-gradient(#1f5a3c,#164530)}
+
+/* 学校生活カード・学校紹介の写真代わりの絵 */
+.p1{background:linear-gradient(180deg,#e3efe6 0 30%,transparent 30%),repeating-linear-gradient(90deg,#f2f5f2 0 30px,#cfdcd3 30px 34px),#e7eee8}
+.p1::after{background:repeating-linear-gradient(90deg,#1f5a3c 0 14px,transparent 14px 38px),linear-gradient(#8aa05a,#6b8545)}
+.p2{background:radial-gradient(circle at 30% 60%,#1f5a3c 0 22px,transparent 23px),radial-gradient(circle at 62% 50%,#fff 0 16px,transparent 17px),linear-gradient(180deg,#8fae6a,#5e7f45)}
+.p3{background:radial-gradient(circle at 25% 70%,#fff 0 18px,transparent 19px),radial-gradient(circle at 55% 65%,#fff 0 18px,transparent 19px),radial-gradient(circle at 82% 70%,#fff 0 18px,transparent 19px),linear-gradient(180deg,#bfe3c9 0 50%,#6e9e5a 50%)}
+.about .ph{background:linear-gradient(180deg,#bfe3c9 0 45%,transparent 45%),repeating-linear-gradient(90deg,#f1f3f2 0 22px,#8fb59c 22px 26px)}
+
+.tabs{gap:0;border-bottom:1px solid #d3e3d8}
+.tabs button{
+  border:0;
+  border-radius:0;
+  background:none;
+  color:#5a6b60;
+  padding:10px 24px;
+  font-weight:500;
+  position:relative;
+  transition:color .25s,background .25s;
+}
+.tabs button::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;
+  background:#2e8b57;transform:scaleX(0);transition:transform .3s;
+}
+.tabs button:hover{background:#f1f8f3;color:#1e6b47}
+.tabs button.on{background:none;color:#14432c;font-weight:700}
+.tabs button.on::after,.tabs button:hover::after{transform:scaleX(1)}
+/* ===== PDF資料の表：シンプル・フラット ===== */
+#page .pdf-table{
+  border-collapse:collapse;
+  border:0;
+  border-top:2px solid #2e8b57;
+  border-bottom:1px solid #cfe0d5;
+  border-radius:0;
+  box-shadow:none;
+  background:#fff;
+}
+
+/* ヘッダー：塗りなし、下線だけ */
+#page .pdf-table th{
+  background:none;
+  color:#1e6b47;
+  border:0;
+  border-bottom:1px solid #cfe0d5;
+  padding:12px 14px;
+  font-weight:700;
+}
+
+/* 各行：横線だけ */
+#page .pdf-table td{
+  border:0;
+  border-bottom:1px solid #e3eee7;
+  padding:14px;
+  box-shadow:none;
+  transition:background .2s;
+}
+#page .pdf-table tr:last-child td{border-bottom:0}
+#page .pdf-table td:last-child:not(:first-child){
+  color:#5a6b60;
+  white-space:nowrap;
+  width:140px;
+}
+
+/* ホバー：背景色だけ薄く変える */
+#page .pdf-table tr:hover td{background:#f4faf6;box-shadow:none}
+
+/* PDFアイコン：枠・背景なし */
+#page .pdf-icon{
+  display:inline;
+  width:auto;height:auto;line-height:inherit;
+  background:none;
+  border-radius:0;
+  font-size:16px;
+  color:#2e8b57;
+  margin-right:10px;
+}
+
+#page .pdf-table a{color:#1e6b47;font-weight:400}
+#page .pdf-table a:hover{text-decoration:underline}
+/* ===== お知らせページ（2列） ===== */
+.nw-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;margin-top:10px}
+.nw-h{margin:0 0 14px;padding:9px 14px;background:#e6f2ea;border-left:4px solid #2e8b57;font-size:18px;font-weight:500;color:#14432c}
+.nw-count{margin:0 0 6px;font-size:13px}
+.nw-table{width:100%;border-collapse:collapse;border:1px solid #9bbfaa;font-size:14px}
+.nw-table th{background:#eef5f0;font-weight:500;padding:8px 10px;text-align:left;border-bottom:1px solid #9bbfaa}
+.nw-table th:last-child{text-align:center}
+.nw-table td{padding:12px 10px;border-top:1px solid #cfe0d5}
+.nw-table tbody tr:first-child td{border-top:0}
+.nw-table tbody tr:hover td{background:#f4faf6}
+.nw-date{text-align:center;white-space:nowrap;width:110px}
+.nw-table a{color:#1e6b47}
+.nw-table a:hover{text-decoration:underline}
+.nw-card{border:1px solid #cfe0d5;margin-bottom:16px;background:#fff}
+.nw-ch{background:#eef5f0;padding:8px 12px}
+.nw-ct{font-size:16px;color:#14432c}
+.nw-ch time{display:block;text-align:right;font-size:14px;color:#445}
+.nw-body{padding:10px 12px;font-size:13px}
+.nw-body p{margin:0 0 10px;max-width:none}
+.nw-body a{color:#1e6b47;text-decoration:underline;word-break:break-all}
+@media(max-width:800px){.nw-grid{grid-template-columns:1fr}}
+/* 表の見出しとカードのタイトルの位置をそろえる */
+.nw-table th{height:48px;padding:0 14px}
+.nw-ch{padding:0 14px 8px}
+.nw-ct{height:48px;display:flex;align-items:center}
+#page .pdf-table td:last-child:not(:first-child),
+#page .pdf-table th:last-child:not(:first-child){width:130px;text-align:center;white-space:nowrap}
+/* ===== 緊急時の対応ページ ===== */
+
+#page .em-p{margin:0 0 4px;padding:0 14px;max-width:none;line-height:1.9}
+#page .em-note{padding-left:30px}
+#page .em-ind{padding-left:34px}
+.em-p b{font-weight:700}
+.em-list{margin:6px 0 0;padding:0 14px 0 38px;line-height:1.95}
+.em-list li{margin-bottom:2px}
+.em-list .em-ind{padding-left:20px}
+.em-list a{color:#1e6b47;text-decoration:underline}
+.em-list a:hover{color:#2e8b57}
+/* 11月の日付が折り返さないように */
+#ev .list time{width:210px}
+/* 年間行事予定のPDF表示 */
+/* ===== トップページのカード写真 ===== */
+.card .ph{
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.card .ph::after{display:none}   /* イラスト用の飾りを消す */
+
+.p1{background-image:url("life.jpeg")}
+.p2{background-image:url("bukatsu.jpg")}
+.p3{background-image:url("event.jpg")}
+/* ===== ヒーロー画像を写真に ===== */
+.scene{
+  background:url("takasugi.jpg") center/cover no-repeat;
+}
+.bld,.stu{display:none}   /* 背景の建物と生徒のイラストを消す */
+/* ===== ヒーローの大きさ ===== */
+.hero{height:440px}                 /* 高さ（元は312px） */
+.copy{top:60px}                     /* 文字の位置を少し下げる */
+.copy h1{font-size:clamp(30px,3.6vw,52px)}   /* キャッチコピーの大きさ */
+.copy p{font-size:clamp(14px,1.4vw,20px)}    /* サブコピーの大きさ */
+
+/* スマホ・タブレットでは低めに */
+@media(max-width:1000px){
+  .hero{height:340px}
+  .copy{top:36px}
+}
 </style>
 </head>
 <body>
@@ -600,18 +784,15 @@ footer .fl img {
   </div>
 </div>  <a href="#bullying">いじめ防止基本方針</a>
 <div class="nav-dropdown">
-  <a href="#" onclick="return false;">お知らせ</a>
 
-  <div class="nav-dropdown-menu">
 <div class="nav-dropdown">
   <a href="#news">お知らせ</a>
   <div class="nav-dropdown-menu">
-    <a href="#documents">各種配布文書</a>
-    <a href="#news">ニュース投稿一覧</a>
+    <a href="#news">お知らせ</a>
+    <a href="#emergency">緊急時の対応</a>
   </div>
-</div>    <a href="#news">緊急時の対応</a>
-  </div>
-</div></nav>
+</div>
+</nav>
 
 <div id="home"><section class="hero">
   <div class="scene"><div class="bld"></div></div>
@@ -633,15 +814,21 @@ footer .fl img {
   <div class="panels">
     <div class="panel reveal"><header><h2><em>NEWS</em>お知らせ</h2><a href="#">一覧を見る<i class="arrow"></i></a></header>
     <li><time>2024.04.01</time>スクールランチメニューについて</li></div>
-    <div class="panel ev reveal"><header><h2><em>Events</em>今月の行事予定</h2><a href="#">一覧を見る<i class="arrow"></i></a></header>
-      <ul><li><time>11月06日（金）</time>音楽会</li><li><time>11月16日（月）～18日（水）</time>期末テスト</li><li><time>11月27日（金）</time>学校ホリデー</li></ul><li><time>11月30日（月）</time>人権集会</li><li><time></time>保護者会</li></ul></div>
+<div class="panel ev reveal"><header><h2><em>Events</em>今月の行事予定</h2><a href="#">一覧を見る<i class="arrow"></i></a></header>
+  <ul>
+    <li><time>11月06日（金）</time>音楽会</li>
+    <li><time>11月16日（月）～18日（水）</time>期末テスト</li>
+    <li><time>11月27日（金）</time>学校ホリデー</li>
+    <li><time>11月30日（月）</time>人権集会</li>
+    <li><time>11月30日（月）</time>保護者会</li>
+  </ul></div>
   </div>
 
   <div class="sec">
     <div>
       <div class="ttl reveal"><h3>OUR SCHOOL</h3><span>学校生活</span><hr><a href="#">学校生活をもっと見る<i class="arrow"></i></a></div>
       <div class="cards reveal">
-        <a class="card" href="#"><div class="ph p1"></div><div class="cap">授業・学び<i class="arrow"></i></div></a>
+        <a class="card" href="#"><div class="ph p1"></div><div class="cap">学校生活<i class="arrow"></i></div></a>
         <a class="card" href="#"><div class="ph p2"></div><div class="cap">部活動<i class="arrow"></i></div></a>
         <a class="card" href="#"><div class="ph p3"></div><div class="cap">学校行事<i class="arrow"></i></div></a>
       </div>
@@ -686,10 +873,13 @@ footer .fl img {
 var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
 var N=[
 {d:'2024.04.01',c:'スクールランチ',t:'スクールランチについて',b:'献立ページ下部にある、調理配膳業務指示書には、献立、調理法、食材、アレルギー物質の情報が記載されています。'},
-];
-var E={11:[['06日（金）','音楽会'],['16日（月）～18日（水）','学校ホリデー'],['27日（金）','学校ホリデー'],['30日（金）','人権集会']]};
+];var E={11:[['06日（金）','音楽会'],['16日（月）～18日（水）','期末テスト'],['27日（金）','学校ホリデー'],['30日（月）','人権集会'],['30日（月）','保護者会']]};
 var L=[];
-var LF={'授業・学び':'少人数での学び合いや、タブレットを使った調べ学習を取り入れています。生徒が自分の考えを伝え合う授業づくりを大切にしています。','部活動':'運動部：バスケットボール・バレーボール・陸上・卓球・サッカー／文化部：吹奏楽・美術・科学・パソコン。活動は平日の放課後と土曜日に行います。','学校行事':'体育祭、文化祭、合唱コンクール、遠足、修学旅行など。生徒が主体となって企画・運営します。'};
+var D=[
+  ['防災計画(大雨)','pdf 83 KB','2025/06/27','./pdf/防災計画（大雨）.pdf'],
+  ['防災計画(地震)','pdf 212 KB','2025/06/27','./pdf/防災計画（地震）.pdf']
+];
+var LF={'学校生活':'少人数での学び合いや、タブレットを使った調べ学習を取り入れています。生徒が自分の考えを伝え合う授業づくりを大切にしています。','部活動':'運動部：バスケットボール・バレーボール・陸上・卓球・サッカー／文化部：吹奏楽・美術・科学・パソコン。活動は平日の放課後と土曜日に行います。','学校行事':'体育祭、文化祭、合唱コンクール、遠足、修学旅行など。生徒が主体となって企画・運営します。'};
 var sec=function(h){return '<h2>'+h+'</h2>'};
 var P={
 about: ['学校案内', function(){
@@ -785,17 +975,98 @@ club: ['部活動', function(){
   + '<h3>文化部</h3>'
   + '<p>吹奏楽部・美術部</p>';
 }],
-events:['行事予定',function(){return '<div class="tabs">'+[11].map(function(m,i){return '<button data-m="'+m+'" class="'+(i?'':'on')+'">'+m+'月</button>'}).join('')+'</div><ul class="list" id="el"></ul>'},function(){var f=function(m){$('#el').innerHTML=E[m].map(function(e){return '<li><time>'+m+'月'+e[0]+'</time>'+e[1]+'</li>'}).join('')};f(11);$$('.tabs button').forEach(function(b){b.onclick=function(){$$('.tabs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');f(b.dataset.m)}})}],
-letters:['学校だより・お便り',function(){return '<p>更新をお待ちください。</p>'+L.map(function(l){return '<div class="acc"><button>'+l[0]+'<span>＋</span></button><div>'+l[1]+'</div></div>'}).join('')},function(){$$('.acc>button').forEach(function(b){b.onclick=function(){var a=b.parentNode;a.classList.toggle('open');$('span',b).textContent=a.classList.contains('open')?'－':'＋'}})}],
-bullying:['いじめ防止基本方針',function(){return '<p>いじめは、どの生徒にも、どの学校でも起こり得るものとの認識に立ち、次の方針で取り組みます。</p><div class="g3"><div><b>予防</b>互いを尊重する学級づくりと道徳教育</div><div><b>早期発見</b>定期的なアンケートと教育相談</div><div><b>対応</b>学校全体で組織的に対応し、保護者と連携</div></div>'+sec('相談窓口')+'<table class="t"><tr><th>学校</th><td>0123-45-6789（教頭・生徒指導主事）</td></tr><tr><th>24時間子供SOSダイヤル</th><td>0120-0-78310</td></tr></table>'}],
-news:['お知らせ',function(){return '<div class="tabs">'+['すべて','スクールランチ','防災計画'].map(function(k,i){return '<button data-c="'+k+'" class="'+(i?'':'on')+'">'+k+'</button>'}).join('')+'</div><ul class="list" id="nl"></ul>'},function(){var f=function(c){$('#nl').innerHTML=N.map(function(n,i){return (c=='すべて'||n.c==c)?'<li><time>'+n.d+'</time><span class="c">'+n.c+'</span><a href="#news-'+(i+1)+'">'+n.t+'</a></li>':''}).join('')};f('すべて');$$('.tabs button').forEach(function(b){b.onclick=function(){$$('.tabs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');f(b.dataset.c)}})}],
-notice:['3年学年閉鎖について',function(){return '<p>感染症対策について、本校の対応をお知らせします。</p><ul style="line-height:2"><li>発熱・かぜ症状がある場合は登校を控え、学校へ連絡してください。</li><li>登校を控えた日は出席停止として扱います。</li><li>手洗い・咳エチケットの指導を継続します。</li></ul>'}],
-parents:['保護者の方へ',function(){return '<p>保護者の皆さまへのご案内です。</p><div class="g3"><div><b>お便り</b><a href="#letters" style="color:var(--navy)">学校だより・保健だよりを見る</a></div><div><b>連絡・欠席</b>朝8時15分までに学校へお電話ください。</div><div><b>相談</b><a href="#contact" style="color:var(--navy)">お問い合わせフォームへ</a></div></div>'}],
+
+events:['行事予定',function(){
+  return '<div class="tabs">'
+    + '<button data-t="month">11月</button>'
+    + '<button data-t="year" class="on">年間行事予定</button>'
+    + '</div><div id="ev"></div>';
+},function(){
+  var pdf='./pdf/2026年間計画.pdf';
+  var f=function(t){
+    if(t=='year'){
+      $('#ev').innerHTML='<table class="pdf-table"><thead><tr><th>タイトル</th><th>公開日</th></tr></thead><tbody>'
+        + '<tr><td><span class="pdf-icon">▣</span><a href="'+pdf+'" target="_blank">年間行事予定 ［ pdf ］</a></td><td>2026/04/01</td></tr>'
+        + '</tbody></table>';
+    }else{
+      $('#ev').innerHTML='<ul class="list">'+E[11].map(function(e){
+        return '<li><time>11月'+e[0]+'</time>'+e[1]+'</li>';
+      }).join('')+'</ul>';
+    }
+  };
+  f('year');
+  $$('.tabs button').forEach(function(b){
+    b.onclick=function(){
+      $$('.tabs button').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      f(b.dataset.t);
+    }
+  });
+}],letters:['学校だより・お便り',function(){return '<p>更新をお待ちください。</p>'+L.map(function(l){return '<div class="acc"><button>'+l[0]+'<span>＋</span></button><div>'+l[1]+'</div></div>'}).join('')},function(){$$('.acc>button').forEach(function(b){b.onclick=function(){var a=b.parentNode;a.classList.toggle('open');$('span',b).textContent=a.classList.contains('open')?'－':'＋'}})}],
+bullying:['いじめ防止基本方針',function(){
+  return '<p>全 2 件</p>'
+  + '<table class="pdf-table">'
+  + '<thead><tr><th>タイトル</th><th>公開日</th></tr></thead><tbody>'
+  + '<tr><td><span class="pdf-icon">▣</span><a href="./pdf/いじめ防止基本方針.pdf" target="_blank">いじめ防止基本方針 ［ pdf 150 KB ］</a></td></tr>'
+  + '</tbody></table>';
+}],
+emergency:['緊急時の対応',function(){
+var h=function(t){return sec(t)};
+  var p=function(t,c){return '<p class="em-p'+(c?' '+c:'')+'">'+t+'</p>'};
+return sec('南海トラフ地震臨時情報発表時、暴風等の警報発令時、避難勧告・避難指示・特別警報発令時の対応について')
+  + p('本校では、南海トラフ地震臨時情報発表時や巨大地震が発生したとき、また、暴風等の警報や避難勧告・避難指示・特別警報の発令時においては、以下のように対応いたします。')
+
+  + h('1 在校中に南海トラフ地震臨時情報が発表されたとき、または、震度5強以上の地震が発生したとき')
+  + p('→ 直ちに授業を中止し、保護者の方へ生徒の<b>引き渡し</b>をします。発表後、<b>すぐにお迎え</b>をお願いします。')
+  + p('※ 状況によっては、生徒とともに体育館に避難することもできます。','em-note')
+  + p('※ 震度5弱以下の地震発生時でも、<b>状況によっては引き渡し</b>をする場合があります。','em-note')
+
+  + h('2 在校中に「暴風警報」もしくは「暴風雪警報」が名古屋市に発令されたとき')
+  + p('→ 通学路の安全確認の上、すみやかに<b>下校</b>をさせます。')
+  + p('気象状況等によっては、学校に待機させる場合があります。','em-ind')
+
+  + h('3 在校中に「避難勧告」もしくは「避難指示」が中島学区もしくは西中島学区に発令されたとき、または名古屋市に「特別警報」が発令されたとき')
+  + p('→ 学校に<b>待機</b>させます。')
+  + p('生徒の待機中に保護者の方が引き取りに来校された場合は、地域の状況をお伝えしますので、引き取って下校するか、生徒とともに体育館で待機（避難）するかをご判断ください。')
+
+  + h('4 在校中以外に、上記1〜3が発表・発令されたとき')
+  + p('→ 登校中…そのまま登校し、上記「在校中」に準じた措置をとります')
+  + p('下校中…そのまま下校し、「在校中」に準じた措置をとります')
+  + p('在宅中…自宅待機し、臨時休業となります')
+
+  + h('5 上記1〜3が解除されたとき')
+  + p('→ 午前6時までに解除…平常通り授業を行う')
+  + p('午前6時〜午前11時までに解除…午後の授業を行う','em-ind')
+  + p('午前11時以降に解除…当日の授業を中止する','em-ind')
+
+  + h('〔確認の方法〕')
+  + '<ul class="em-list">'
+  +   '<li>テレビ…地上デジタルテレビのデータ放送</li>'
+  +   '<li>インターネット・スマートフォン等'
+  +     '<div class="em-ind">… <a href="https://www.jma.go.jp/" target="_blank">気象庁</a>・<a href="https://tenki.jp/" target="_blank">日本気象協会（tenki.jp）</a>等のホームページ<br>民間天気予報会社のホームページ</div>'
+  +   '</li>'
+  +   '<li>高杉中学校からのメール配信（「なごやっ子あんしんメール」）</li>'
+  + '</ul>';
+}],
+news:['お知らせ',function(){
+  var rows=D.map(function(d){
+    return '<tr><td><span class="pdf-icon">▣</span><a href="'+d[3]+'" target="_blank">'+d[0]+' ［ '+d[1]+' ］</a></td><td class="nw-date">'+d[2]+'</td></tr>';
+  }).join('');
+  var cards=N.map(function(n){
+    return '<article class="nw-card"><div class="nw-ch"><div class="nw-ct">'+n.t+'</div><time>'+n.d+'</time></div>'
+      +'<div class="nw-body"><p>'+n.b+'</p>'+(n.url?'<a href="'+n.url+'" target="_blank">'+n.url+'</a>':'')+'</div></article>';
+  }).join('');
+  return '<div class="nw-grid">'
+    +'<section><h3 class="nw-h">各種配布文書</h3><p class="nw-count">全 '+D.length+' 件</p>'
+    +'<table class="nw-table"><thead><tr><th>タイトル</th><th>公開日</th></tr></thead><tbody>'+rows+'</tbody></table></section>'
+    +'<section><h3 class="nw-h">ニュース投稿一覧</h3><p class="nw-count">全 '+N.length+' 件</p>'+cards+'</section>'
+    +'</div>';
+}],parents:['保護者の方へ',function(){return '<p>保護者の皆さまへのご案内です。</p><div class="g3"><div><b>お便り</b><a href="#letters" style="color:var(--navy)">学校だより・保健だよりを見る</a></div><div><b>連絡・欠席</b>朝8時15分までに学校へお電話ください。</div><div><b>相談</b><a href="#contact" style="color:var(--navy)">お問い合わせフォームへ</a></div></div>'}],
 access:['アクセス',function(){return '<div class="mapb"><i></i></div><table class="t" style="margin-top:16px"><tr><th>住所</th><td>〒454-0936 愛知県名古屋市中川区高杉町133番地</td></tr><tr><th>電話</th><td>052-352-0281</td></tr><tr><th>FAX</th><td>052-352-9342</td></tr</table>'}],
 contact:['お問い合わせ',function(){return '<p>必要事項をご入力ください。</p><form class="f" id="cf" novalidate><label>お名前<input name="n"><span class="err"></span></label><label>メールアドレス<input name="e" type="email"><span class="err"></span></label><label>種別<select><option>学校について</option><option>入学について</option><option>その他</option></select></label><label>お問い合わせ内容<textarea name="m" rows="5"></textarea><span class="err"></span></label><button class="fbtn" type="submit">送信する</button></form>'},function(){$('#cf').onsubmit=function(ev){ev.preventDefault();var f=ev.target,ok=true,c=function(el,t){var s=el.parentNode.querySelector('.err');s.textContent=t?'':'入力してください。';if(!t)ok=false};c(f.n,f.n.value.trim());c(f.e,/^\S+@\S+\.\S+$/.test(f.e.value));c(f.m,f.m.value.trim());if(ok)f.outerHTML='<div class="ok"><b>送信しました。</b><br>内容を確認のうえ、担当よりご連絡します。（デモのため実際には送信されません）</div>'}}],
 sitemap:['サイトマップ',function(){return '<div class="sm">'+['about','goals','events','letters','life','bullying','news','parents','access','contact','privacy'].map(function(k){return '<a href="#'+k+'">'+P[k][0]+'</a><br>'}).join('')+'</div>'}],
 privacy:['プライバシーポリシー',function(){return '<p>本校は、個人情報を適切に取り扱い、保護者・生徒の皆さまの情報を教育活動の目的以外には使用しません。お問い合わせフォームで入力された情報は、回答のためにのみ利用します。</p>'}]};
-var R={'トップページ':'home','学校案内':'about','教育目標':'goals','行事予定':'events','お便り':'letters','学校生活':'life','いじめ防止基本方針':'bullying','お知らせ':'news','保護者の方へ':'parents','アクセス':'access','お問い合わせ':'contact','サイトマップ':'sitemap','プライバシーポリシー':'privacy','詳しく見る':'notice','学校を知る':'about','年間行事予定':'events','学校だより・お便り':'letters','授業・学び':'life','部活動':'life','学校行事':'life','学校生活をもっと見る':'life','学校案内を見る':'about','名古屋市立高杉中学校':'home'};
+var R={'トップページ':'home','学校案内':'about','教育目標':'goals','行事予定':'events','お便り':'letters','学校生活':'life','いじめ防止基本方針':'bullying','お知らせ':'news','保護者の方へ':'parents','アクセス':'access','お問い合わせ':'contact','サイトマップ':'sitemap','プライバシーポリシー':'privacy','詳しく見る':'notice','学校を知る':'about','年間行事予定':'events','学校だより・お便り':'letters','学校生活':'life','部活動':'club','学校行事':'events','学校生活をもっと見る':'life','学校案内を見る':'about','名古屋市立高杉中学校':'home'};
 $$('a[href="#"]').forEach(function(a){var t=a.textContent.trim(),r=R[t];if(t=='一覧を見る')r=a.closest('.ev')?'events':'news';if(r)a.setAttribute('href','#'+r)});
 $$('.panel:not(.ev) li').forEach(function(li,i){li.style.cursor='pointer';li.onclick=function(){location.hash='news-'+(i+1)}});
 $$('.panel.ev li').forEach(function(li){li.style.cursor='pointer';li.onclick=function(){location.hash='events'}});
